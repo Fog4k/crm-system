@@ -6,6 +6,9 @@ using Microsoft.OpenApi.Models;
 
 var builder = WebApplication.CreateBuilder(args);
 
+// 🔧 Явно указываем слушать на 80 порту
+builder.WebHost.UseUrls("http://0.0.0.0:80");
+
 // Db
 builder.Services.AddDbContext<CrmDbContext>(opt =>
     opt.UseSqlite("Data Source=crm.db"));
